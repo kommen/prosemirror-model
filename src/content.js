@@ -165,7 +165,7 @@ class TokenStream {
     this.nodeTypes = nodeTypes
     this.inline = null
     this.pos = 0
-    this.tokens = string.split(/\s*(?=\b|\W|$)/)
+    this.tokens = string.split(/\s*(\b|\W|$)/).filter(token => token !== '')
     if (this.tokens[this.tokens.length - 1] == "") this.tokens.pop()
     if (this.tokens[0] == "") this.tokens.unshift()
   }
